@@ -212,12 +212,6 @@ spec:
             # config files
             - mountPath: /arkconfig
               name: {{ $chart_name }}-config-volume
-            {{- if $crontab }}
-            - mountPath: /ark/config/crontab
-              name: {{ $chart_name }}-crontab-volume
-              subPath: "crontab"
-              readOnly: true
-            {{- end }}
             {{- /*- ark-cluster game files */}}
             # shared game files
             - mountPath: {{ $.Values.persistence.game.mountPath }}
